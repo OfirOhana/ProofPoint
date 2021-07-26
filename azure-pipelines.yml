@@ -8,8 +8,7 @@ pool:
 steps:
 - script: cd weather_app/src/weather
   displayName: 'Move to setup.py'
-
-- script: |
-    python setup.py sdist
-    pip install weather.tragz -i https://pypi/simple
-  displayName: 'Make a tragz file and installation of the packge'
+- script: python setup.py sdist
+  displayName: 'Make a tragz file'
+- script: pip install weather.targz -i https://pypi/simple
+  displayName: 'Installation of the packge'
