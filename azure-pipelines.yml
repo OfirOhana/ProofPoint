@@ -1,0 +1,14 @@
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: cd weather_app/src/weather
+  displayName: 'Move to setup.py'
+- script: python setup.py sdist
+  displayName: 'Make a tragz file'
+- script: pip install weather.targz -i https://pypi/simple
+  displayName: 'Installation of the packge'
